@@ -1,0 +1,50 @@
+<div class="top_align">
+  <ag-grid-angular #agGrid id="myGrid" class="ag-theme-balham table_align" [columnDefs]="columnDefs"
+  [rowData]="rowData" [defaultColDef]="defaultColDef" [animateRows]="true" (gridReady)="onGridReady($event)" domLayout='autoHeight'
+  [frameworkComponents]="frameworkComponents"></ag-grid-angular>
+</div>
+<div class="profileform">
+    <form>
+      <div class="row">
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="label"><strong>First Name</strong></label>
+                  <input type="text" class="form-control" placeholder="Firstname" [(ngModel)]='Userobject.firstname' name="firstname">
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="label"><strong>Last Name</strong></label>
+                  <input type="text" class="form-control" placeholder="Lastname" [(ngModel)]='Userobject.lastname' name="lastname">
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="label"><strong>User Name</strong></label>
+                  <input type="text" class="form-control" [disabled]="true" placeholder="Username" [(ngModel)]='Userobject.username' name="username">
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="label"><strong>Password</strong></label>
+                  <input type="text" class="form-control" placeholder="Password" [(ngModel)]='Userobject.password' name="password">
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label class="label"><strong>Email</strong></label>
+                  <input type="email" class="form-control" placeholder="Email" [(ngModel)]='Userobject.email' name="email">
+              </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+                <label class="label"><strong>Profile Pic</strong></label>
+                <input type="image" class="form-control" multiple (change)="onFileSelected($event)" type="file"  name="avatar" accept="image/png, image/gif, image/jpeg" />
+            </div>
+          </div>
+           <div class="col-sm-6">
+            <button type="submit" class="btn btn-primary" (click)="adduser()">submit</button>&nbsp;&nbsp;
+          </div> 
+      </div>
+  </form>
+</div>
